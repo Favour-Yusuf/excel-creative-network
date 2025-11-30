@@ -1,13 +1,12 @@
 import { FeaturedProjects } from "../components/FeaturedProjects";
-import Footer from "../components/Footer";
-import HeroHeader from "../components/HeroHeader";
 import { LetsConnect } from "../components/LetsConnect";
 import ToughInfrastructureSection from "../components/ToughInfrastructureSection";
+import Hero from "../components/Hero";
 
 const Home = () => {
   return (
     <>
-      <HeroHeader />
+     <Hero/>
 
       <section id="aboutus">
         <ToughInfrastructureSection />
@@ -21,7 +20,7 @@ const Home = () => {
         <LetsConnect />
       </section>
 
-      <Footer />
+   
     </>
   );
 };

@@ -1,18 +1,7 @@
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, ArrowDown } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowDown } from "lucide-react";
 
-
-export default function HeroHeader() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 30);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+export default function Hero() {
   return (
     <div className="relative w-full h-screen overflow-hidden">
       {/* Background */}
@@ -24,55 +13,13 @@ export default function HeroHeader() {
         transition={{ duration: 2 }}
       />
 
-      {/* Dark overlay animation */}
+      {/* Dark Overlay */}
       <motion.div
         className="absolute inset-0 bg-black"
         initial={{ opacity: 0.2 }}
         animate={{ opacity: 0.55 }}
         transition={{ duration: 1.5 }}
       />
-
-      {/* Header */}
-      <header
-        className={`fixed top-0 left-0 w-full z-30 transition-all duration-300 px-6 md:px-10 py-5 flex items-center justify-between
-        ${scrolled ? "bg-black/60 backdrop-blur-md shadow-lg" : "bg-transparent"}`}
-      >
-        <img src="/logo.png" alt="Logo" />
-
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-10 text-white text-lg">
-          <a href="#aboutus" className="hover:text-gray-300 transition">About Us</a>
-          <a href="#featured" className="hover:text-gray-300 transition">Services</a>
-          <a href="#" className="hover:text-gray-300 transition">Projects</a>
-          <a href="#contact" className="hover:text-gray-300 transition">Contact Us</a>
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <button className="md:hidden text-white" onClick={() => setIsOpen(true)}>
-          <Menu className="w-8 h-8" />
-        </button>
-      </header>
-
-      {/* Mobile Menu Overlay */}
-      {isOpen && (
-        <motion.div
-          initial={{ x: "100%" }}
-          animate={{ x: 0 }}
-          exit={{ x: "100%" }}
-          transition={{ duration: 0.3 }}
-          className="fixed inset-0 bg-black/90 backdrop-blur-lg z-40 flex flex-col p-10 space-y-8 text-white text-2xl"
-        >
-          <button className="self-end mb-10" onClick={() => setIsOpen(false)}>
-            <X className="w-8 h-8" />
-          </button>
-
-          <Link className="hover:text-gray-300" to="/about">About Us</Link>
-          <Link className="hover:text-gray-300" to="/services">Services</Link>
-          <Link className="hover:text-gray-300" to="/Projects">Projects</Link>
-
-        
-        </motion.div>
-      )}
 
       {/* Hero Content */}
       <div className="relative z-20 flex flex-col justify-center h-full px-8 md:px-20 max-w-2xl text-white">
