@@ -3,12 +3,12 @@ import { ArrowRight } from "lucide-react";
 
 const projects = [
   {
-    title: "BLow and Medium Voltage Installation",
+    title: "Low and Medium Voltage Installation",
     tag: "MEP",
     image: "/featured1.png",
   },
   {
-    title: "Reefer Office Electrical Installations",
+    title: " Office Electrical Installations",
     tag: "MEP",
     image: "/Featured2.png",
   },
@@ -18,7 +18,7 @@ const projects = [
     image: "/Featured3.png",
   },
   {
-    title: "Reefer Office Electrical Installations",
+    title: " Office Electrical Installations",
     tag: "MEP",
     image: "/Featured4.png",
   },

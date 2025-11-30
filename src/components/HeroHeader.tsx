@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, ArrowDown } from "lucide-react";
+import { Link } from "react-router-dom";
+
 
 export default function HeroHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,9 +41,9 @@ export default function HeroHeader() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-10 text-white text-lg">
-          <a href="#aboutus" className="hover:text-gray-300 transition">Who We Are</a>
-          <a href="#featured" className="hover:text-gray-300 transition">What We Do</a>
-          <a href="#" className="hover:text-gray-300 transition">Careers</a>
+          <a href="#aboutus" className="hover:text-gray-300 transition">About Us</a>
+          <a href="#featured" className="hover:text-gray-300 transition">Services</a>
+          <a href="#" className="hover:text-gray-300 transition">Projects</a>
           <a href="#contact" className="hover:text-gray-300 transition">Contact Us</a>
         </nav>
 
@@ -64,10 +66,11 @@ export default function HeroHeader() {
             <X className="w-8 h-8" />
           </button>
 
-          <a href="#" className="hover:text-gray-300">Who We Are</a>
-          <a href="#" className="hover:text-gray-300">What We Do</a>
-          <a href="#" className="hover:text-gray-300">Careers</a>
-          <a href="#" className="hover:text-gray-300">Contact Us</a>
+          <Link className="hover:text-gray-300" to="/about">About Us</Link>
+          <Link className="hover:text-gray-300" to="/services">Services</Link>
+          <Link className="hover:text-gray-300" to="/Projects">Projects</Link>
+
+        
         </motion.div>
       )}
 

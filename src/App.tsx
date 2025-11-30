@@ -1,34 +1,23 @@
-import { FeaturedProjects } from "./components/FeaturedProjects"
-import Footer from "./components/Footer"
-import HeroHeader from "./components/HeroHeader"
-import { LetsConnect } from "./components/LetsConnect"
-import ToughInfrastructureSection from "./components/ToughInfrastructureSection"
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Projects from "./pages/Projects";
+import Layout from "./layout/Layout";
 
 const App = () => {
   return (
-    <>
-    
-    <HeroHeader/>
+    <Routes>
+       <Route element={<Layout />}>
+       <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/projects" element={<Projects/>} />
+       
+       </Route>
+      
+    </Routes>
+  );
+};
 
- 
-    <section id="aboutus">
-    <ToughInfrastructureSection/>
-
-    </section>
-    <section id="featured">
-    <FeaturedProjects />
-
-    </section>
-    <section id="contact">
-    <LetsConnect/>
-
-    </section>
-    <section>
-    <Footer/>
-
-    </section>
-    </>
-  )
-}
-
-export default App
+export default App;
