@@ -45,9 +45,11 @@ export function LetsConnect() {
           className="bg-white text-black rounded-lg p-10 shadow-xl"
         >
           <h3 className="text-2xl font-bold mb-3">Join Our Team</h3>
-          <button className="flex items-center gap-2 text-gray-600 hover:text-black transition">
+          <Link to="/career">
+          <button className="flex cursor-pointer items-center gap-2 text-gray-600 hover:text-black transition">
             Explore Careers <ArrowRight className="w-4 h-4" />
           </button>
+          </Link>
         </motion.div>
 
       </div>

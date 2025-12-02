@@ -19,7 +19,7 @@ const projects = [
     image: "/Featured3.png",
   },
   {
-    title: "Office Electrical Installations",
+    title: "Gantry and Quenching facility",
     tag: "MEP",
     image: "/Featured4.png",
   },

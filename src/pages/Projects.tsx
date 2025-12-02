@@ -82,9 +82,16 @@ const projects: Project[] = [
       "Installation of power distribution, lighting, plumbing, heating, HVAC systems, including testing and commissioning.",
     services: ["MEP"],
     images: [
-      "/projects/hotel1.jpg",
-      "/projects/hotel2.jpg",
-      "/projects/hotel3.jpg"
+      "/Luxery-Hotel/Aba.jpg",
+      "/Luxery-Hotel/2.jpg",
+      "/Luxery-Hotel/3.jpg",
+      "/Luxery-Hotel/4.jpg",
+      "/Luxery-Hotel/5.jpg",
+      "/Luxery-Hotel/6.jpg",
+      "/Luxery-Hotel/7.jpg",
+      "/Luxery-Hotel/8.jpg",
+      
+      
     ]
   }
 ];

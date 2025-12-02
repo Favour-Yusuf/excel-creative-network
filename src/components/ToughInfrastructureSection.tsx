@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function ToughInfrastructureSection() {
   return (
@@ -123,7 +124,10 @@ export default function ToughInfrastructureSection() {
             whileHover={{ scale: 1.05 }}
             className="mt-8 px-6 py-3 border border-white rounded-full text-lg hover:bg-white hover:text-black transition"
           >
+            <Link to="safety">
             Explore Our Safety Commitment →
+            
+            </Link>
           </motion.button>
 
         </motion.div>

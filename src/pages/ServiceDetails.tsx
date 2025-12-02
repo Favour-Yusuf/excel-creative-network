@@ -43,8 +43,8 @@ export default function ServiceDetails() {
               <li>Lifecyle O&M & training</li>
             </ul>
 
-            <h3 className="mt-6">Downloadables</h3>
-            <p>If you have PDFs, link them here (O&M, datasheets, method statements).</p>
+            {/* <h3 className="mt-6">Downloadables</h3>
+            <p>If you have PDFs, link them here (O&M, datasheets, method statements).</p> */}
           </div>
 
           <div className="mt-10 flex gap-4">
@@ -52,9 +52,9 @@ export default function ServiceDetails() {
               ← Back to Services
             </Link>
 
-            <a href="#contact" className="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-full">
+            <Link to="/contact" className="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-full">
               Request Quote <ArrowRight size={16} />
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>

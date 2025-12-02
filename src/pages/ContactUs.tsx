@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
 import { useState } from "react";
 
 export default function ContactUs() {
@@ -10,8 +10,33 @@ export default function ContactUs() {
     message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+
   const handleChange = (e: any) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.target);
+
+    try {
+      await fetch("https://formsubmit.co/info@excelcreativenetwork.com",
+ {
+        method: "POST",
+        body: formData,
+      });
+
+      setShowSuccess(true);
+      setForm({ name: "", email: "", phone: "", message: "" });
+    } catch (err) {
+      alert("Something went wrong. Please try again.");
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
@@ -62,7 +87,6 @@ export default function ContactUs() {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            {/* PHONE */}
             <div className="flex gap-5 items-start bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
               <Phone className="w-10 h-10 text-primary" />
               <div>
@@ -71,7 +95,6 @@ export default function ContactUs() {
               </div>
             </div>
 
-            {/* EMAIL */}
             <div className="flex gap-5 items-start bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
               <Mail className="w-10 h-10 text-primary" />
               <div>
@@ -80,7 +103,6 @@ export default function ContactUs() {
               </div>
             </div>
 
-            {/* ADDRESS */}
             <div className="flex gap-5 items-start bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
               <MapPin className="w-10 h-10 text-primary" />
               <div>
@@ -88,7 +110,7 @@ export default function ContactUs() {
                 <p className="text-gray-600 leading-relaxed">
                   P27 Osolo Way, Off International Airport Road,  
                   <br />
-                 Ajao Estate, Lagos, Nigeria.
+                  Ajao Estate, Lagos, Nigeria.
                 </p>
               </div>
             </div>
@@ -96,17 +118,24 @@ export default function ContactUs() {
 
           {/* Contact Form */}
           <motion.form
+            onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="bg-white p-8 rounded-2xl shadow-xl"
           >
+            {/* Formsubmit hidden settings */}
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_subject" value="New Contact Form Message" />
+            <input type="hidden" name="_template" value="table" />
+
             <div className="grid grid-cols-1 gap-6 mb-6">
               <div>
                 <label className="block mb-1 font-medium">Full Name</label>
                 <input
                   type="text"
                   name="name"
+                  required
                   value={form.name}
                   onChange={handleChange}
                   placeholder="Enter your full name"
@@ -119,6 +148,7 @@ export default function ContactUs() {
                 <input
                   type="email"
                   name="email"
+                  required
                   value={form.email}
                   onChange={handleChange}
                   placeholder="Enter your email"
@@ -131,6 +161,7 @@ export default function ContactUs() {
                 <input
                   type="tel"
                   name="phone"
+                  required
                   value={form.phone}
                   onChange={handleChange}
                   placeholder="Enter your phone number"
@@ -139,29 +170,53 @@ export default function ContactUs() {
               </div>
 
               <div>
-                <label className="block mb-1 font-medium">
-                  How can we help?
-                </label>
+                <label className="block mb-1 font-medium">How can we help?</label>
                 <textarea
                   name="message"
+                  required
                   value={form.message}
                   onChange={handleChange}
-                
                   placeholder="Tell us about your inquiry"
                   className="w-full border rounded-lg p-3 focus:ring-2 focus:ring-black/40 outline-none"
                 ></textarea>
               </div>
             </div>
 
+            {/* CAPTCHA (Cloudflare Turnstile recommended) */}
+            {/* <div className="mb-5">
+              <div className="cf-turnstile" data-sitekey="YOUR_SITE_KEY"></div>
+            </div> */}
+
             <button
               type="submit"
-              className="flex items-center gap-3 bg-black text-white px-6 py-3 rounded-full hover:bg-gray-900 transition w-fit"
+              disabled={isSubmitting}
+              className="flex cursor-pointer items-center gap-3 bg-black text-white px-6 py-3 rounded-full hover:bg-gray-900 transition w-fit disabled:opacity-50"
             >
-              Send Message <Send size={18} />
+              {isSubmitting ? "Sending..." : "Send Message"}
+              <Send size={18} />
             </button>
           </motion.form>
         </div>
       </section>
+
+      {/* SUCCESS POPUP */}
+      {showSuccess && (
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-999">
+          <div className="bg-white p-10 rounded-2xl shadow-2xl max-w-sm text-center">
+            <CheckCircle className="w-14 h-14 text-green-600 mx-auto mb-4" />
+            <h2 className="text-2xl font-semibold mb-2">Message Sent!</h2>
+            <p className="text-gray-600 mb-6">
+              Thank you for contacting us. We’ll get back to you shortly.
+            </p>
+            <button
+              onClick={() => setShowSuccess(false)}
+              className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-900"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

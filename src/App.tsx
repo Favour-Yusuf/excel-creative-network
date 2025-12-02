@@ -7,6 +7,8 @@ import Layout from "./layout/Layout";
 import ContactUs from "./pages/ContactUs";
 import ScrollToTop from "./ScrollToTop";
 import ServiceDetails from "./pages/ServiceDetails";
+import Career from "./pages/Career";
+import SafetyPage from "./pages/Safety";
 
 const App = () => {
   return (
@@ -21,6 +23,9 @@ const App = () => {
       <Route path="/services/:slug" element={<ServiceDetails />} />
       <Route path="/projects" element={<Projects/>} />
       <Route path="/contact" element={<ContactUs/>} />
+      <Route path="/career" element={<Career />} />
+      <Route path="/safety" element={<SafetyPage/>} />
+
        
        </Route>
       

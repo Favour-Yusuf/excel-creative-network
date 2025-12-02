@@ -37,41 +37,64 @@ export default function About() {
       {/* HERO SECTION */}
       {/* -------------------------------- */}
 
-      <section className="relative h-[70vh] w-full overflow-hidden bg-[#050c1b] text-white flex items-center">
-        <motion.div
-          style={{ y: yParallax }}
-          className="absolute inset-0 opacity-40"
-        >
-          <img
-            src="/Aboutus.jpg"
-            alt="About Background"
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
+      <section className="relative h-[90vh] w-full overflow-hidden bg-[#050c1b] text-white flex items-center">
+  <motion.div
+    style={{ y: yParallax }}
+    className="absolute inset-0 opacity-40"
+  >
+    <img
+      src="/heroImg.png"
+      alt="About Background"
+      className="w-full h-full object-cover"
+    />
+  </motion.div>
 
-        <div className="relative z-10 px-6 max-w-6xl mx-auto">
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl font-bold leading-tight max-w-3xl"
-          >
-            Building With Precision.
-            <span className="text-[#d8e200]"> Leading With Integrity.</span>
-          </motion.h1>
+  <div className="relative z-10 px-6 max-w-6xl mx-auto">
+    <motion.h1
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="text-5xl font-bold leading-tight max-w-3xl"
+    >
+      Building With Precision.
+      <span className="text-[#d8e200]"> Leading With Integrity.</span>
+    </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-lg max-w-xl mt-6 text-gray-200"
-          >
-            For over a decade, we’ve delivered high-impact engineering,
-            infrastructure, EPC/MEC, and mission-critical solutions that
-            stand the test of time.
-          </motion.p>
-        </div>
-      </section>
+    <motion.p
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.3, duration: 0.8 }}
+      className="text-lg max-w-xl mt-6 text-gray-200"
+    >
+      For over a decade, we’ve delivered high-impact engineering,
+      infrastructure, EPC/MEC, and mission-critical solutions that
+      stand the test of time.
+    </motion.p>
+
+    {/* DOWNLOAD BUTTON */}
+    <motion.a
+      href="/Excel Creative profile .pdf"
+      download
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.5, duration: 0.8 }}
+      className="inline-flex items-center gap-2 mt-8 bg-[#d8e200] text-black font-medium px-6 py-3 rounded-full shadow-lg hover:bg-[#c7d300] transition-all"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-5 h-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth="2"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2m-4-4l-4 4m0 0l-4-4m4 4V4" />
+      </svg>
+      Download Company Profile
+    </motion.a>
+  </div>
+</section>
+
 
       {/* -------------------------------- */}
       {/* TEAM SECTION */}
