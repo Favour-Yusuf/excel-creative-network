@@ -1,29 +1,29 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Building2, Users, Lightbulb } from "lucide-react";
+import {  Building2, Users, Lightbulb } from "lucide-react";
 
 export default function Career() {
-  const jobs = [
-    {
-      title: "Electrical Engineer (LV/MV Systems)",
-      location: "Lagos, Nigeria",
-      type: "Full-Time",
-    },
-    {
-      title: "Mechanical Engineer (HVAC & Plumbing)",
-      location: "Port Harcourt, Nigeria",
-      type: "Full-Time",
-    },
-    {
-      title: "Project Manager (Construction / MEP)",
-      location: "Lagos, Nigeria",
-      type: "Full-Time",
-    },
-    {
-      title: "Fabrication Technician / Welder",
-      location: "Onitsha, Nigeria",
-      type: "Full-Time",
-    },
-  ];
+//   const jobs = [
+//     {
+//       title: "Electrical Engineer (LV/MV Systems)",
+//       location: "Lagos, Nigeria",
+//       type: "Full-Time",
+//     },
+//     {
+//       title: "Mechanical Engineer (HVAC & Plumbing)",
+//       location: "Port Harcourt, Nigeria",
+//       type: "Full-Time",
+//     },
+//     {
+//       title: "Project Manager (Construction / MEP)",
+//       location: "Lagos, Nigeria",
+//       type: "Full-Time",
+//     },
+//     {
+//       title: "Fabrication Technician / Welder",
+//       location: "Onitsha, Nigeria",
+//       type: "Full-Time",
+//     },
+//   ];
 
   return (
     <div className="min-h-screen bg-gray-50 pb-24">
