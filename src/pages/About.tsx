@@ -43,7 +43,7 @@ export default function About() {
           className="absolute inset-0 opacity-40"
         >
           <img
-            src="/about-hero.jpg"
+            src="/Aboutus.jpg"
             alt="About Background"
             className="w-full h-full object-cover"
           />
@@ -77,7 +77,7 @@ export default function About() {
       {/* TEAM SECTION */}
       {/* -------------------------------- */}
 
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -111,7 +111,7 @@ export default function About() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* -------------------------------- */}
       {/* COMPANY VALUES */}

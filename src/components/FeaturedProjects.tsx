@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const projects = [
   {
@@ -8,17 +9,17 @@ const projects = [
     image: "/featured1.png",
   },
   {
-    title: " Office Electrical Installations",
+    title: "Installation of Reefer Rack and Power supply",
     tag: "MEP",
     image: "/Featured2.png",
   },
   {
-    title: "Induction Bending Facility",
+    title: "pipe bending and coating machine installation",
     tag: "MEP",
     image: "/Featured3.png",
   },
   {
-    title: " Office Electrical Installations",
+    title: "Office Electrical Installations",
     tag: "MEP",
     image: "/Featured4.png",
   },
@@ -32,9 +33,10 @@ export function FeaturedProjects() {
           Featured Projects
         </h2>
 
-        <button className="flex items-center gap-2 text-gray-700 hover:text-black transition">
+      <Link to="/projects">
+        <button className="flex items-center gap-2 cursor-pointer text-gray-700 hover:text-black transition">
           View All <ArrowRight className="w-4 h-4" />
-        </button>
+        </button></Link>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">

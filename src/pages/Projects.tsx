@@ -18,9 +18,17 @@ const projects: Project[] = [
     client: "Brentex Petroleum Services Limited",
     services: ["MEP"],
     images: [
-      "/electrical/bending machine installation 2.jpg",
-      "/electrical/induction bending machine 4.jpg",
-      "/projects/pipe3.jpg"
+      "/electrical/bending.jpg",
+      "/electrical/Excel Company PH-39.jpg",
+      "/electrical/induction.jpg",
+      "/electrical/instalation.jpg",
+      "/electrical/installatio induc.jpg",
+      "/electrical/installation 3.jpg",
+      "/electrical/installation 4.jpg",
+      "/electrical/installation 5.jpg",
+      "/electrical/installation.jpg",
+      "/electrical/Machine installation_.jpg",
+      "/electrical/pipe.jpg",
     ]
   },
   {
@@ -31,9 +39,14 @@ const projects: Project[] = [
     client: "WACT",
     services: ["MEP"],
     images: [
-      "/projects/reefer1.jpg",
-      "/projects/reefer2.jpg",
-      "/projects/reefer3.jpg"
+      "/wact/ONNE 1.jpg",
+      "/wact/MAST POLE.jpg",
+      "/wact/p19.JPG",
+      "/wact/PHOTO-2024-12-30-16-52-34.jpg",
+      "/wact/REEFER RACK 1.jpg",
+      "/wact/REEFER RACK.jpg",
+      "/wact/thumbnail - 2024-12-30T185640.404.jpg",
+      
     ]
   },
   {
@@ -43,8 +56,24 @@ const projects: Project[] = [
     client: "International Breweries — Onitsha Plant",
     services: ["MEP"],
     images: [
-      "/projects/lv1.jpg",
-      "/projects/lv2.jpg"
+      "/InternationBrewies/IMG_20230404_134002_74.jpg",
+      "/InternationBrewies/Copy of IMG_20230407_135353_657.jpg",
+      "/InternationBrewies/Copy of IMG_20230426_150241_945.jpg",
+      "/InternationBrewies/Copy of IMG_20230502_110715_679.jpg",
+      "/InternationBrewies/Guiness project image.JPG",
+      "/InternationBrewies/IMG_20230407_135353_657.jpg",
+      "/InternationBrewies/IMG_20230420_112502_547.jpg",
+      "/InternationBrewies/IMG_20230420_153008_161.jpg",
+      "/InternationBrewies/IMG_20230422_111843_580.jpg",
+      "/InternationBrewies/IMG_20230426_150241_945.jpg",
+      "/InternationBrewies/IMG_20230426_153911_787.jpg",
+      "/InternationBrewies/IMG_20230429_145805_207.jpg",
+      "/InternationBrewies/IMG_20230429_150344_033.jpg",
+      "/InternationBrewies/p4.jpg",
+      "/InternationBrewies/p7.jpg",
+      "/InternationBrewies/p17.jpg",
+      "/InternationBrewies/thumbnail (76).jpg",
+      "/InternationBrewies/thumbnail (82).jpg",
     ]
   },
   {
@@ -167,36 +196,50 @@ const Projects = () => {
 
       {/* Lightbox Gallery Modal */}
       <AnimatePresence>
-        {selectedImages && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50 px-4"
+  {selectedImages && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 bg-black/70 backdrop-blur-lg flex items-center justify-center"
+    >
+      {/* Prevent background scrolling */}
+      <div
+        className="absolute inset-0 overflow-y-auto py-10 px-4"
+        onClick={() => setSelectedImages(null)} // close when clicking background
+      >
+        <motion.div
+          initial={{ scale: 0.95, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.95, opacity: 0 }}
+          className="relative max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden"
+          onClick={(e) => e.stopPropagation()} // prevents closing when clicking inside
+        >
+          {/* Close Button */}
+          <button
+            onClick={() => setSelectedImages(null)}
+            className="absolute top-4 right-4 z-50 bg-black/80 hover:bg-black text-white p-2 rounded-full shadow-lg transition"
           >
-            <div className="relative max-w-4xl w-full bg-white rounded-2xl overflow-hidden shadow-xl">
-              <button
-                onClick={() => setSelectedImages(null)}
-                className="absolute top-4 right-4 bg-black/70 text-white p-2 rounded-full"
-              >
-                <X size={20} />
-              </button>
+            <X size={22} />
+          </button>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-4">
-                {selectedImages.map((img, i) => (
-                  <motion.img
-                    key={i}
-                    src={img}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="w-full h-64 object-cover rounded-xl"
-                  />
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          {/* Scrollable Image Grid */}
+          <div className="p-6 grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[80vh] overflow-y-auto">
+            {selectedImages.map((img, i) => (
+              <motion.img
+                key={i}
+                src={img}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="w-full h-60 object-cover rounded-xl shadow-sm"
+              />
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
     </div>
   );
 };

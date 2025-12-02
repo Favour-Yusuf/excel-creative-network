@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function LetsConnect() {
   return (
@@ -27,9 +28,11 @@ export function LetsConnect() {
           className="bg-white text-black rounded-lg p-10 shadow-xl"
         >
           <h3 className="text-2xl font-bold mb-3">Collaborate With Us</h3>
-          <button className="flex items-center gap-2 text-gray-600 hover:text-black transition">
+         <Link to="/contact">
+          <button className="flex items-center gap-2 cursor-pointer text-gray-600 hover:text-black transition">
             Contact Us <ArrowRight className="w-4 h-4" />
           </button>
+         </Link>
         </motion.div>
 
         {/* Card 2 */}

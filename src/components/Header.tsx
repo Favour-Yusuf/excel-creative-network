@@ -30,7 +30,6 @@ export default function Header() {
           <NavLink to="/services" className="hover:text-gray-300 transition">Services</NavLink>
           <NavLink to="/projects" className="hover:text-gray-300 transition">Projects</NavLink>
           <NavLink to="/contact" className="hover:text-gray-300 transition">Contact</NavLink>
-          
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -55,7 +54,7 @@ export default function Header() {
           <NavLink className="hover:text-gray-300" to="/about" onClick={() => setIsOpen(false)}>About Us</NavLink>
           <NavLink className="hover:text-gray-300" to="/services" onClick={() => setIsOpen(false)}>Services</NavLink>
           <NavLink className="hover:text-gray-300" to="/projects" onClick={() => setIsOpen(false)}>Projects</NavLink>
-          <NavLink className="hover:text-gray-300" to="/contact" onClick={() => setIsOpen(false)}>Projects</NavLink>
+          <NavLink className="hover:text-gray-300" to="/contact" onClick={() => setIsOpen(false)}>Contact Us</NavLink>
          
         </motion.div>
       )}

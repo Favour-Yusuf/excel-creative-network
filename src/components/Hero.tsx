@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -48,7 +49,9 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.6 }}
           className="px-6 py-3 rounded-full border border-white text-white hover:bg-white hover:text-black transition text-lg w-fit"
         >
+          <Link to="/contact">
           View Quotes →
+          </Link>
         </motion.button>
       </div>
 
