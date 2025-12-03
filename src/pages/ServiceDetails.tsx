@@ -35,13 +35,13 @@ export default function ServiceDetails() {
             <p>{service.longContent ?? service.description}</p>
 
             {/* Example structure — you can replace with richer content */}
-            <h3>What we deliver</h3>
+            {/* <h3>What we deliver</h3>
             <ul>
               <li>Design & engineering</li>
               <li>Procurement & supply chain management</li>
               <li>Installation and test & commissioning</li>
               <li>Lifecyle O&M & training</li>
-            </ul>
+            </ul> */}
 
             {/* <h3 className="mt-6">Downloadables</h3>
             <p>If you have PDFs, link them here (O&M, datasheets, method statements).</p> */}

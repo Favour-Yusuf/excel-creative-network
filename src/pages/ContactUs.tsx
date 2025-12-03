@@ -24,18 +24,15 @@ export default function ContactUs() {
     const formData = new FormData(e.target);
 
     try {
-      await fetch("https://formsubmit.co/info@excelcreativenetwork.com",
- {
+      await fetch("https://formsubmit.co/info@excelcreativenetwork.com", {
         method: "POST",
         body: formData,
       });
-
       setShowSuccess(true);
       setForm({ name: "", email: "", phone: "", message: "" });
     } catch (err) {
       alert("Something went wrong. Please try again.");
     }
-
     setIsSubmitting(false);
   };
 
@@ -108,7 +105,7 @@ export default function ContactUs() {
               <div>
                 <h3 className="text-xl font-semibold mb-1">Office Address</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  P27 Osolo Way, Off International Airport Road,  
+                  P27 Osolo Way, Off International Airport Road,
                   <br />
                   Ajao Estate, Lagos, Nigeria.
                 </p>
@@ -125,8 +122,12 @@ export default function ContactUs() {
             className="bg-white p-8 rounded-2xl shadow-xl"
           >
             {/* Formsubmit hidden settings */}
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_subject" value="New Contact Form Message" />
+            <input type="hidden" name="_captcha" value="true" />
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Contact Form From ECN Website"
+            />
             <input type="hidden" name="_template" value="table" />
 
             <div className="grid grid-cols-1 gap-6 mb-6">
@@ -170,7 +171,9 @@ export default function ContactUs() {
               </div>
 
               <div>
-                <label className="block mb-1 font-medium">How can we help?</label>
+                <label className="block mb-1 font-medium">
+                  How can we help?
+                </label>
                 <textarea
                   name="message"
                   required

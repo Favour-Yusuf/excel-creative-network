@@ -43,7 +43,7 @@ export default function ToughInfrastructureSection() {
 
           <p className="text-gray-600 text-lg mt-6 leading-relaxed">
             We bring engineering, construction, and lifecycle maintenance
-            together — a process that moves from concept to commissioning
+            together; a process that moves from concept to commissioning
             without friction. Every step, every detail, we get it right the
             first time so you can operate and build once, confidently.
           </p>
@@ -79,7 +79,7 @@ export default function ToughInfrastructureSection() {
             whileHover={{ scale: 1.05 }}
             className="font-semibold text-gray-900"
           >
-            <h3 className="text-5xl font-bold">97%</h3>
+            <h3 className="text-5xl font-bold">100%</h3>
             <p className="mt-3 text-gray-800 text-lg">On-Time Emergency Response</p>
           </motion.div>
 
@@ -92,7 +92,7 @@ export default function ToughInfrastructureSection() {
             whileHover={{ scale: 1.05 }}
             className="font-semibold text-gray-900"
           >
-            <h3 className="text-5xl font-bold">98%</h3>
+            <h3 className="text-5xl font-bold">100%</h3>
             <p className="mt-3 text-gray-800 text-lg">QA/QC Passed First Time</p>
           </motion.div>
 

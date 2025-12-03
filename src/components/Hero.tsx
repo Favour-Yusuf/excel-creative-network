@@ -39,8 +39,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.3 }}
           className="text-lg md:text-xl text-gray-200 mb-8"
         >
-          Construction management, electrical & solar, mechanical & plumbing, and facilities support—
-          delivered safely, on schedule, and ready to operate.
+          We are a professional engineering, infrastructure and services company, with expertise in the development and improvement of physical and social infrastructure.
         </motion.p>
 
         <motion.button

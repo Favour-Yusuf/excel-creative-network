@@ -40,7 +40,10 @@ export function FeaturedProjects() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        {projects.map((p, i) => (
+       
+        
+         {projects.map((p, i) => (
+           <Link to="/projects">
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 30 }}
@@ -64,7 +67,10 @@ export function FeaturedProjects() {
               <p className="text-lg font-semibold max-w-[90%]">{p.title}</p>
             </div>
           </motion.div>
+        </Link>
+
         ))}
+       
       </div>
     </section>
   );
