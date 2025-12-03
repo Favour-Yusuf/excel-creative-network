@@ -10,6 +10,13 @@ import {
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
+const socials = [
+  { icon: Facebook, url: "https://web.facebook.com/excelcreativeng" },
+  { icon: Twitter, url: "https://x.com/ExcelCreativeN" },
+  // { icon: Linkedin, url: "https://linkedin.com/company/excelcreativenetwork" },
+  { icon: Instagram, url: "https://www.instagram.com/excelcreativenetwork" },
+];
+
 export default function Footer() {
   return (
     <footer className="w-full bg-[#071A2E] text-white">
@@ -108,11 +115,10 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Social icons */}
           <div className="flex gap-6">
-            {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
-              <Icon
-                key={i}
-                className="w-6 h-6 opacity-70 hover:opacity-100 hover:scale-110 transition cursor-pointer"
-              />
+            {socials.map(({ icon: Icon, url }, i) => (
+              <a key={i} href={url} target="_blank" rel="noopener noreferrer">
+                <Icon className="w-6 h-6 opacity-70 hover:opacity-100 hover:scale-110 transition cursor-pointer" />
+              </a>
             ))}
           </div>
 
