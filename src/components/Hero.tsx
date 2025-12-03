@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import RotatingHeadline from "./RotatingHeadline";
 
 export default function Hero() {
   return (
@@ -24,14 +25,8 @@ export default function Hero() {
 
       {/* Hero Content */}
       <div className="relative z-20 flex flex-col justify-center h-full px-8 md:px-20 max-w-2xl text-white">
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
-        >
-          Ready-to-Operate <br /> Infrastructure
-        </motion.h2>
+        <RotatingHeadline />
+
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
