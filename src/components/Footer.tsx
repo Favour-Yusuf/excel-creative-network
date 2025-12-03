@@ -1,7 +1,6 @@
 import {
   Facebook,
   Twitter,
-  Linkedin,
   Instagram,
   Mail,
   Phone,
