@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 
 const socials = [
   { icon: Facebook, url: "https://web.facebook.com/excelcreativeng" },
-  { icon: Twitter, url: "https://x.com/ExcelCreativeN" },
+  { icon: Twitter, url: "https://x.com/Excelcreativeng" },
   // { icon: Linkedin, url: "https://linkedin.com/company/excelcreativenetwork" },
   { icon: Instagram, url: "https://www.instagram.com/excelcreativenetwork" },
 ];
